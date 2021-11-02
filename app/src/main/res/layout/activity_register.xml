@@ -73,11 +73,22 @@
             android:layout_centerHorizontal="true"
             android:textColor="@color/black"
             />
+        <EditText
+            android:id="@+id/confirmpassword"
+            android:layout_width="250dp"
+            android:layout_marginTop="30dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/password"
+            android:inputType="textPassword"
+            android:hint="Password"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/black"
+            />
 
         <Button
-            android:id="@+id/login"
+            android:id="@+id/register"
             android:layout_marginTop="30dp"
-            android:layout_below="@+id/password"
+            android:layout_below="@+id/confirmpassword"
             android:layout_centerHorizontal="true"
             android:layout_width="100dp"
             android:layout_height="50dp"
