@@ -46,6 +46,7 @@
             android:hint="Email"
             android:layout_centerHorizontal="true"
             android:textColor="@color/black"
+
             />
 
         <EditText
@@ -73,6 +74,7 @@
 
     </RelativeLayout>
     <TextView
+        android:id="@+id/orsignupwith"
         android:layout_marginTop="30dp"
         android:layout_below="@+id/midlayout"
         android:layout_centerHorizontal="true"
@@ -80,5 +82,44 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Or sign up with" />
+
+    <LinearLayout
+        android:id="@+id/icons"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/orsignupwith"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true">
+        <ImageView
+
+            android:layout_margin="5dp"
+            android:id="@+id/facebook"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_launcher_background"/>
+        <ImageView
+            android:layout_margin="5dp"
+            android:id="@+id/twitter"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_launcher_background"/>
+        <ImageView
+            android:layout_margin="5dp"
+            android:id="@+id/google"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_launcher_background"/>
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/moveToRegister"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/icons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Don't have an account?Register here"
+        android:textColor="@color/purple_500"/>
 
 </RelativeLayout>
