@@ -5,18 +5,34 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.moringaschool.exchangerateapp.Authentication.LoginActivity;
+import com.moringaschool.exchangerateapp.Profile.ProfileActivity;
+
+import static android.content.ContentValues.TAG;
+import static java.lang.Integer.parseInt;
 
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+
+    //esthers work
+
+    private Button mFindRatesButton;
+    private EditText mRateEditText;
+    private TextView mAppNameTextView;
+
 
 
     @Override
@@ -38,6 +54,26 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
+        //Esthers work
+
+        mRateEditText = (EditText) findViewById(R.id.rateEditText);
+        mFindRatesButton = (Button) findViewById(R.id.findRatesButton);
+        mAppNameTextView = (TextView) findViewById(R.id.appNameTextView);
+
+        mFindRatesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (v == mFindRatesButton) {
+            int rate = parseInt(mRateEditText.getText().toString());
+             Log.d(TAG, String.valueOf(rate));
+            Intent intent = new Intent(MainActivity.this, RatesActivity.class);
+            intent.putExtra("rate", rate);
+            startActivity(intent);
+        }
+
+            }
+        });
+
     }
 
 
@@ -53,6 +89,11 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
         if(id == R.id.action_logout){
             logout();
+            return true;
+        }
+        if(id == R.id.profile){
+            Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+            startActivity(intent);
             return true;
         }
         return super.onOptionsItemSelected(item);
