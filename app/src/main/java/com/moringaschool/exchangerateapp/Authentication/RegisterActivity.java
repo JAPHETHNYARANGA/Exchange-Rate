@@ -10,6 +10,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +22,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.moringaschool.exchangerateapp.MainActivity;
 import com.moringaschool.exchangerateapp.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.Objects;
 import java.util.regex.Pattern;
@@ -32,6 +34,8 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText password, confirmPassword, email, username;
     private Button register;
     TextView login;
+
+    ImageView facebook, twitter, google;
 
     private FirebaseAuth mAuth;
 
@@ -47,12 +51,35 @@ public class RegisterActivity extends AppCompatActivity {
 
 
 
+
+        facebook = findViewById(R.id.facebook);
+        twitter = findViewById(R.id.twitter);
+        google = findViewById(R.id.google);
+
+
         password = findViewById(R.id.password);
         confirmPassword = findViewById(R.id.confirmpassword);
         email = findViewById(R.id.email);
         username = findViewById(R.id.username);
         register =findViewById(R.id.register);
 
+
+        //login icons
+        Picasso.get()
+                .load("https://i.pinimg.com/236x/4e/ff/ea/4effeae35be0a015037d4412c63e71da.jpg")
+                .resize(50, 50)
+                .centerCrop()
+                .into(facebook);
+        Picasso.get()
+                .load("https://i.pinimg.com/236x/84/3d/d8/843dd8ca717a56cfc9a615df10d39944.jpg")
+                .resize(50, 50)
+                .centerCrop()
+                .into(twitter);
+        Picasso.get()
+                .load("https://i.pinimg.com/236x/39/21/6d/39216d73519bca962bd4a01f3e8f4a4b.jpg")
+                .resize(50, 50)
+                .centerCrop()
+                .into(google);
 
 
         login.setOnClickListener(new View.OnClickListener() {
