@@ -16,6 +16,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.moringaschool.exchangerateapp.MainActivity;
 import com.moringaschool.exchangerateapp.R;
 
+import java.util.HashMap;
+
 public class EditProfileActivity extends AppCompatActivity {
 
     ImageView image;
@@ -23,13 +25,16 @@ public class EditProfileActivity extends AppCompatActivity {
     Button editProfile;
 
 
-    private FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
-    private DatabaseReference mDatabaseReference = mDatabase.getReference();
+    private FirebaseDatabase mDatabase;
+    private DatabaseReference mDatabaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
+
+         mDatabase= FirebaseDatabase.getInstance();
+         mDatabaseReference = mDatabase.getReference();
 
         image = findViewById(R.id.profilepic);
         email = findViewById(R.id.email);
@@ -40,44 +45,34 @@ public class EditProfileActivity extends AppCompatActivity {
         editProfile = findViewById(R.id.updateProfileBtn);
 
 
-        mDatabaseReference = mDatabase.getReference().child("name");
-        mDatabaseReference.setValue("Donald Duck");
+
+//
+//        Profilepojo profilepojo = new Profilepojo(Email, Phone, Bio, Name);
+//        mDatabaseReference = mDatabase.getReference().child("name");
 
 
         editProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                addData();
-                Intent intent = new Intent(EditProfileActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
-    }
 
-    private void addData() {
-
-
-
-
-
-         //Get all values
-
-        String Name = username.getText().toString().trim();
+                String Name = username.getText().toString().trim();
         String Email = email.getText().toString().trim();
         String Phone = phone.getText().toString().trim();
         String Bio = bio.getText().toString().trim();
 //        Image Image = (image.getImageAlpha());
 
-         Profilepojo profilepojo = new Profilepojo(Email, Phone, Bio, Name);
+                HashMap<String, Object> hashMap = new HashMap<>();
+                hashMap.put("name",Name);
+                hashMap.put("email",Email);
+                hashMap.put("phone",Phone);
+                hashMap.put("bio",Bio);
 
 
-//        root.setValue("Testing");
-//         root.setValue(profilepojo);
-//        root saveData= new root(Name, Email,Phone, Bio);
-//
-//        root.setValue(saveData);
-        Toast.makeText(EditProfileActivity.this,"Successfull",Toast.LENGTH_SHORT).show();
 
-
+                Intent intent = new Intent(EditProfileActivity.this, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
 }
