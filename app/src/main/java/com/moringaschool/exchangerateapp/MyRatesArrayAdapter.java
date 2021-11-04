@@ -1,6 +1,7 @@
 package com.moringaschool.exchangerateapp;
 
 import android.content.Context;
+<<<<<<< HEAD
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -61,3 +62,35 @@ import java.util.List;
 //        return mRates.length;
 //    }
 //}
+=======
+import android.widget.ArrayAdapter;
+
+import androidx.annotation.NonNull;
+
+public class MyRatesArrayAdapter  extends ArrayAdapter {
+    private Context mContext;
+    private String[] mCountry;
+    private int [] mRates;
+
+
+    public MyRatesArrayAdapter(@NonNull Context context, int resource,String [] mCountry,int [] mRates) {
+        super(context, resource);
+        this.mContext = mContext;
+        this.mCountry = mCountry;
+        this.mRates= mRates;
+    }
+
+    @Override
+    public Object getItem(int position) {
+        String country = mCountry[position];
+        int rate = mRates[position];
+
+        return String.format("%s \nNew currency is: %s", country,rate);
+    }
+
+    @Override
+    public int getCount() {
+        return mCountry.length;
+    }
+}
+>>>>>>> cf1fc54a6b1d700c6a3e8b929eb5a89c32fa6ebf

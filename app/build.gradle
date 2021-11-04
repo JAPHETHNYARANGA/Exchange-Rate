@@ -27,11 +27,21 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+<<<<<<< HEAD
 //    buildTypes.each {
 //        it.buildConfigField 'String', 'CURRENCY_API_KEY', CurrencyApiKey
 //    }
 }
+=======
+>>>>>>> cf1fc54a6b1d700c6a3e8b929eb5a89c32fa6ebf
 
+
+    buildTypes.each {
+        it.buildConfigField 'String', 'CURRENCY_API_KEY', CurrencyApiKey
+    }
+
+}
+g
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.3.1'
@@ -41,6 +51,9 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    //implementation 'com.jakewharton:butterknife:10.2.0'
+    //annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
 
     //Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'

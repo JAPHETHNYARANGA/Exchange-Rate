@@ -1,11 +1,18 @@
 package com.moringaschool.exchangerateapp;
 
+<<<<<<< HEAD
 import androidx.annotation.NonNull;
+=======
+//import static androidx.collection.ArraySet.TAG;
+import static java.lang.Integer.parseInt;
+
+>>>>>>> cf1fc54a6b1d700c6a3e8b929eb5a89c32fa6ebf
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+<<<<<<< HEAD
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -37,8 +44,25 @@ import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+=======
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+//import butterknife.BindView;
+//import butterknife.ButterKnife;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    //public static final String TAG = MainActivity.class.getSimpleName();
+    private Button mFindRatesButton;
+    private EditText mRateEditText;
+    private TextView mAppNameTextView;
+>>>>>>> cf1fc54a6b1d700c6a3e8b929eb5a89c32fa6ebf
+
+//    @BindView(R.id.findRatesButton) Button mFindRatesButton;
+//    @BindView(R.id.rateEditText) EditText mRateEditText;
+//    @BindView(R.id.appNameTextView) TextView mAppNameTextView;
 
     //private static final String TAG = MainActivity.class.getSimpleName();
     private Button button;
@@ -57,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+<<<<<<< HEAD
 
        // ButterKnife.bind(this);
 
@@ -236,3 +261,28 @@ public class MainActivity extends AppCompatActivity {
 //
 
 
+=======
+        //ButterKnife.bind(this);
+
+        mRateEditText = (EditText) findViewById(R.id.rateEditText);
+        mFindRatesButton = (Button) findViewById(R.id.findRatesButton);
+        mAppNameTextView = (TextView) findViewById(R.id.appNameTextView);
+
+        mFindRatesButton.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v == mFindRatesButton) {
+            int rate = parseInt(mRateEditText.getText().toString());
+            // Log.d(TAG, String.valueOf(rate));
+            Intent intent = new Intent(MainActivity.this, RatesActivity.class);
+            intent.putExtra("rate", rate);
+            startActivity(intent);
+        }
+
+    }
+}
+
+//    parseInt(myEditWidget. getText(). toString());
+>>>>>>> cf1fc54a6b1d700c6a3e8b929eb5a89c32fa6ebf
