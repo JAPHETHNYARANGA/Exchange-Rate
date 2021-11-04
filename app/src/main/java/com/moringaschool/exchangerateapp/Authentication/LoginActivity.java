@@ -72,17 +72,17 @@ public class LoginActivity extends AppCompatActivity {
 
     //login icons
         Picasso.get()
-                .load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2v0cgwh1SL9ATrJVVGWlejPaTQsbxhwLM2Q&usqp=CAU")
+                .load("https://i.pinimg.com/236x/4e/ff/ea/4effeae35be0a015037d4412c63e71da.jpg")
                 .resize(50, 50)
                 .centerCrop()
                 .into(facebook);
         Picasso.get()
-                .load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2v0cgwh1SL9ATrJVVGWlejPaTQsbxhwLM2Q&usqp=CAU")
+                .load("https://i.pinimg.com/236x/84/3d/d8/843dd8ca717a56cfc9a615df10d39944.jpg")
                 .resize(50, 50)
                 .centerCrop()
                 .into(twitter);
         Picasso.get()
-                .load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2v0cgwh1SL9ATrJVVGWlejPaTQsbxhwLM2Q&usqp=CAU")
+                .load("https://i.pinimg.com/236x/39/21/6d/39216d73519bca962bd4a01f3e8f4a4b.jpg")
                 .resize(50, 50)
                 .centerCrop()
                 .into(google);
