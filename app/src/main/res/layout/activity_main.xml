@@ -1,42 +1,181 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
-<!--    //removed fonts-->
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Currency Converter App"
+            android:textSize="30dp"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"/>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Currency to be converted"
+                android:textSize="15dp"
+                android:layout_margin="20dp"/>
+
+            <EditText
+                android:id="@+id/currency_to_be_converted"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="From Currency:"
+                android:textSize="15dp"
+                android:layout_margin="20dp"/>
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_spinner"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+
+                <Spinner android:layout_width="250dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/convert_from"
+                    android:layout_gravity="center"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="To Currency:"
+                android:textSize="15dp"
+                android:layout_margin="20dp"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+               android:background="@drawable/border_spinner"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+
+                <Spinner
+                    android:layout_width="250dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/convert_to"
+                    android:layout_gravity="center"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+<!--    <ProgressBar-->
+<!--        android:id="@+id/progressBar"-->
+<!--        style="?android:attr/progressBarStyle"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_centerInParent="true" />-->
 
     <TextView
-        android:id="@+id/appNameTextView"
+        android:id="@+id/errorTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp"
-        android:text="Currency Converter App"
-        android:textColor="@color/black"
-        android:textSize="35sp" />
+        android:layout_centerInParent="true"
+        android:layout_margin="16dp"
+        android:visibility="gone" />
 
-
-    <EditText
-        android:id="@+id/rateEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/findRatesButton"
-        android:layout_alignParentStart="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="135dp"
-        android:layout_marginBottom="97dp"
-        android:background="@color/black"
-        android:inputType="number"
-        android:hint="Enter the value"
-        android:padding="5dp"
-        android:textColor="@color/white" />
 
     <Button
-        android:id="@+id/findRatesButton"
-        android:layout_width="wrap_content"
+        android:id="@+id/button"
+        android:layout_width="132dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="278dp"
-        android:text="Search the rates" />
-</RelativeLayout>
+        android:layout_marginStart="140dp"
+        android:layout_marginLeft="162dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginRight="190dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/custom_button"
+        android:text="Convert Currency "
+        android:textColor="@android:color/white" />
+
+    <EditText
+            android:id="@+id/currency_converted"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:hint="The converted currency is:"/>
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/appNameTextView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="35dp"-->
+<!--        android:text="Currency Converter App"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="35sp" />-->
+
+
+<!--    <EditText-->
+<!--        android:id="@+id/rateEditText"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_above="@+id/findRatesButton"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginStart="135dp"-->
+<!--        android:layout_marginBottom="97dp"-->
+<!--        android:background="@color/black"-->
+<!--        android:inputType="number"-->
+<!--        android:hint="Enter the value"-->
+<!--        android:padding="5dp"-->
+<!--        android:textColor="@color/white" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/findRatesButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginBottom="278dp"-->
+<!--        android:text="Search the rates" />-->
+<!--</RelativeLayout>-->

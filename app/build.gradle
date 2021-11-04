@@ -27,9 +27,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    buildTypes.each {
-        it.buildConfigField 'String', 'CURRENCY_API_KEY', CurrencyApiKey
-    }
+//    buildTypes.each {
+//        it.buildConfigField 'String', 'CURRENCY_API_KEY', CurrencyApiKey
+//    }
 }
 
 dependencies {
@@ -56,4 +56,20 @@ dependencies {
     //butterKnife
     implementation 'com.jakewharton:butterknife:10.2.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
+
+
+    implementation 'org.glassfish:javax.annotation:10.0-b28'
+
+
+//
+//    implementation fileTree(dir: 'libs', include: ['*.jar'])
+//    implementation 'androidx.appcompat:appcompat:1.0.2'
+//    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+//    implementation 'com.squareup.retrofit2:retrofit:2.7.1'
+//    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+//    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+//    implementation 'com.google.code.gson:gson:2.6.2'
+//    testImplementation 'junit:junit:4.12'
+//    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
+//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 }
